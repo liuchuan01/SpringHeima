@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLoction="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans">
+
+    <bean id="userService" class="com.liuchuan.service.impl.UserServiceImpl">
+        <!--name是set方法属性名，但是首字母要小写-->
+        <!--ref是引用bean配置文件中已有的bean的id，这儿引用的就是下面的userDao-->
+        <property name="userDao" ref="userDao">
+        </property>
+    </bean>
+    <bean id="userDao" class="com.liuchuan.dao.impl.UserDaoImpl"></bean>
+
+</beans>
